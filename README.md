@@ -1,8 +1,9 @@
 # The Wild Oasis
-## Tech Stack
-- React
-- React Query
-- React Hook Forms
-- Tailwind CSS
-- Supabase
 
+## Tech Stack
+
+-   React
+-   React Query
+-   React Hook Forms
+-   Styled Components
+-   Supabase
