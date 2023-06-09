@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+/**
+ * Justify Content in flexbox
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+ *
+ * */
 const ALIGNMENTS = {
     start: "flex-start",
     end: "flex-end",
@@ -9,6 +14,14 @@ const ALIGNMENTS = {
     even: "space-evenly",
 };
 
+/**
+ * Row component
+ *
+ * @description Places items in a row
+ * @param {string} justify - justify-content property for flexbox
+ * @returns {React.JSX.Element}
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+ */
 const Row = styled.div`
     display: flex;
     flex-direction: row;
