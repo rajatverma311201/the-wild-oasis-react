@@ -2,6 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 :root {
+
+
     &, &.light-mode {
     /* Grey */
     --color-grey-0: #fff;
@@ -97,6 +99,17 @@ const GlobalStyles = createGlobalStyle`
 
 
     }
+
+    /* FONT WEIGHTS */
+
+    --fw-extralight: 200;
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+
 
     *,
     *::before,
