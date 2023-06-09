@@ -1,10 +1,10 @@
-import  { useEffect, useRef } from "react";
-
-
-
+import { useEffect, useRef } from "react";
 
 type Handler = () => void;
-export default function useOutsideClick(handler:Handler, listenCapturing = true) {
+export default function useOutsideClick(
+    handler: Handler,
+    listenCapturing = true
+) {
     const ref = useRef<HTMLDivElement | null>(null);
 
     useEffect(

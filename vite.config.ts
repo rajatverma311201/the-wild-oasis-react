@@ -6,25 +6,9 @@ import * as path from "path";
 
 // https://vitejs.dev/config/
 
-const aliasNamesArray = [
-    "components",
-    "config",
-    "context",
-    "features",
-    "hooks",
-    "pages",
-    "services",
-    "utils",
-];
-
-const aliasArray = aliasNamesArray.map((aliasName) => ({
-    find: `@${aliasName}`,
-    replacement: path.resolve(__dirname, `src/${aliasName}`),
-}));
-
 export default defineConfig({
     plugins: [react()],
     resolve: {
-        alias: aliasArray,
+        alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
     },
 });

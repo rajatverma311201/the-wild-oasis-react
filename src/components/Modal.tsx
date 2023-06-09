@@ -7,7 +7,7 @@ import React, {
 
 import styled from "styled-components";
 import { HiXMark } from "react-icons/hi2";
-import { useOutsideClick } from "../hooks";
+import { useOutsideClick } from "@/hooks";
 
 const Overlay = styled.div`
     width: "100%";
@@ -65,9 +65,14 @@ type ModalContextType = {
 };
 
 const ModalContext = createContext<ModalContextType>({
-    open: (a: string) => {},
+    open: (a: string) => {
+        a;
+        return;
+    },
     openName: "",
-    close: () => {},
+    close: () => {
+        return;
+    },
 });
 
 function Modal({ children }: { children: React.ReactNode }) {
