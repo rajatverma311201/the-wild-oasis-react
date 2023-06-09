@@ -1,5 +1,4 @@
 import { Dashboard } from "@/pages";
-
 function App() {
     return (
         <div>
