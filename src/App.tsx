@@ -1,4 +1,5 @@
 import { Button, Input, Heading } from "@/components";
+import { Row, Column } from "@/components/layout";
 import styled from "styled-components";
 
 const StyledApp = styled.div`
@@ -10,11 +11,17 @@ const StyledApp = styled.div`
         var(--color-brand-200)
     );
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    justify-items: center;
+    /* align-items: center; */
+    /* justify-items: center; */
     padding: 2.5rem;
     gap: 2.5rem;
+
+    & > * {
+        border: 1px solid var(--color-grey-300);
+        padding: 1rem;
+    }
 `;
 
 function App() {
@@ -27,8 +34,24 @@ function App() {
                 <Heading as="h4">H4 Hello World</Heading>
             </div>
 
-            <Button>Check In</Button>
-            <Input placeholder="Hello" />
+            <div>
+                <Button>Check In</Button>
+            </div>
+            <div>
+                <Input placeholder="Hello" />
+            </div>
+            <div>
+                <Row>
+                    <Button>Check In</Button>
+                    <Button>Check In</Button>
+                </Row>
+            </div>
+            <div>
+                <Column align="center">
+                    <Button>Check In</Button>
+                    <Button>Check In</Button>
+                </Column>
+            </div>
         </StyledApp>
     );
 }
