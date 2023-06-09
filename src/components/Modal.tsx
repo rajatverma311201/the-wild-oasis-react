@@ -7,6 +7,7 @@ import React, {
 
 import styled from "styled-components";
 import { HiXMark } from "react-icons/hi2";
+import { useOutsideClick } from "../hooks";
 
 const Overlay = styled.div`
     width: "100%";
@@ -101,9 +102,9 @@ function Window({
     name: string;
 }) {
     const { openName, close } = useContext(ModalContext);
+    const ref = useOutsideClick(close);
 
     if (openName != windowName) return null;
-    const ref = useOutsideClick(close);
 
     return (
         <>
@@ -112,9 +113,7 @@ function Window({
                     <Button onClick={close}>
                         <HiXMark />
                     </Button>
-                    <div>
-                    {cloneElement(children, { onCloseModal: close })}
-                    </div>
+                    <div>{cloneElement(children, { onCloseModal: close })}</div>
                 </StyledModal>
             </Overlay>
         </>
