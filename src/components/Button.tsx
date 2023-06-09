@@ -8,8 +8,6 @@ const Button = styled.button`
     border-radius: var(--border-radius-sm);
     border: none;
     box-shadow: var(--shadow-sm);
-    transition: all 0.2s;
-
     &:hover {
         background-color: var(--color-brand-700);
     }
