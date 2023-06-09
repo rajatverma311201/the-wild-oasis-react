@@ -1,4 +1,3 @@
-import { Dashboard } from "@/pages";
 import { Button, Input, Heading } from "@/components";
 import styled from "styled-components";
 
