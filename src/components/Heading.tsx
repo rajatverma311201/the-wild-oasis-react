@@ -18,7 +18,7 @@ const h4Styles = css`
 `;
 
 const Heading = styled.h1`
-    ${(props: { as: string }) => {
+    ${(props: { as?: string }) => {
         switch (props.as) {
             case "h1":
                 return h1Styles;
