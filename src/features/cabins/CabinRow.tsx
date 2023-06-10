@@ -3,6 +3,9 @@ import { Cabin } from "@/types";
 // import CreateCabinForm from "./CreateCabinForm";
 // import { useDeleteCabin } from "./useDeleteCabin";
 import { formatCurrency } from "@/utils/helpers";
+import { deleteCabin } from "@/services/apiCabins";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { toast } from "react-hot-toast";
 // import { HiPencil, HiSquare2Stack, HiTrash } from "react-icons/hi2";
 // import { useCreateCabin } from "./useCreateCabin";
 // import Modal from "../../ui/Modal";
@@ -53,14 +56,14 @@ function CabinRow({ cabin }: { cabin: Cabin }) {
     //   const { isCreating, createCabin } = useCreateCabin();
 
     const {
-        // id: cabinId,
+        id: cabinId,
         name,
         maxCapacity,
         regularPrice,
         discount,
         image,
-        // description,
-    } = cabin;
+    }: // description,
+    Cabin = cabin;
 
     // function handleDuplicate() {
     //     createCabin({
@@ -73,6 +76,21 @@ function CabinRow({ cabin }: { cabin: Cabin }) {
     //     });
     // }
 
+    const queryClient = useQueryClient();
+    const { mutate, isLoading: isDeleting } = useMutation({
+        // mutationKey: ["cabins", cabinId],
+        mutationFn: (id: number) => deleteCabin(id),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["cabins"] });
+            toast.success("Cabin deleted successfully");
+        },
+        onError: (error: { message: string }) => {
+            toast.error(error.message);
+        },
+
+        // onMutate: () => {
+    });
+
     return (
         <TableRow>
             <Img src={image} />
@@ -84,7 +102,9 @@ function CabinRow({ cabin }: { cabin: Cabin }) {
             ) : (
                 <span>&mdash;</span>
             )}
-
+            <button disabled={isDeleting} onClick={() => mutate(cabinId)}>
+                Delete
+            </button>
             {/*
       <div>
         <button disabled={isCreating} onClick={handleDuplicate}>
