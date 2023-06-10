@@ -34,7 +34,7 @@ const Column = styled.div`
 `;
 
 Column.defaultProps = {
-    align: "start",
+    align: "stretch",
 };
 
 export default Column;

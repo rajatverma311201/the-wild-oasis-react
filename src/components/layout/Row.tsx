@@ -33,7 +33,7 @@ const Row = styled.div`
     }) =>
         props.justify
             ? `justify-content: ${ALIGNMENTS[props.justify]};`
-            : `justify-content: center;`}
+            : `justify-content: space-between;`}
 `;
 
 export default Row;

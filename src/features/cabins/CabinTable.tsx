@@ -1,13 +1,9 @@
-import { useState } from "react";
-
 import { useQuery } from "@tanstack/react-query";
 import styled from "styled-components";
 import { getCabins } from "@/services/apiCabins";
 import { Spinner } from "@/components/ui";
 import { Cabin } from "@/types";
-import { Button } from "@/components";
-import { CreateCabinForm, CabinRow } from ".";
-import { Column } from "@/components/layout";
+import { CabinRow } from ".";
 
 const Table = styled.div`
     border: 1px solid var(--color-grey-200);
@@ -34,7 +30,6 @@ const TableHeader = styled.header`
 `;
 
 function CabinTable() {
-    const [showForm, setShowForm] = useState<boolean>(false);
     const {
         isLoading,
         data: cabins,
@@ -60,12 +55,6 @@ function CabinTable() {
                     <CabinRow cabin={cabin} key={cabin.id} />
                 ))}
             </Table>
-            <Column align="stretch">
-                <Button onClick={() => setShowForm((show) => !show)}>
-                    Add Cabin
-                </Button>
-            </Column>
-            {showForm && <CreateCabinForm />}
         </>
     );
 }
