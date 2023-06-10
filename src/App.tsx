@@ -1,38 +1,49 @@
 /* MODULE IMPORTS */
-import styled from "styled-components";
+
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 /* COMPONENT IMPORTS */
-import { Button, Heading } from "@/components";
-import { Row, Column, Center } from "@/components/layout";
-import { Input } from "@/components/form";
+// import { Button, Heading } from "@/components";
+// import { Row, Column, Center } from "@/components/layout";
+// import { Input } from "@/components/form";
+import { AppLayout } from "@/components/layout";
 
-/* App STYLES */
-const StyledApp = styled.div`
-    width: 100%;
-    min-height: 100%;
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    padding: 2.5rem;
-    gap: 2.5rem;
-
-    & > * {
-        border-radius: 5px;
-        box-shadow: var(--shadow-md);
-        padding: 1rem;
-        background: linear-gradient(
-            to right bottom,
-            var(--color-brand-50),
-            var(--color-brand-200)
-        );
-    }
-`;
+/* PAGE IMPORTS */
+import {
+    Account,
+    Bookings,
+    Cabins,
+    Dashboard,
+    Login,
+    PageNotFound,
+    Settings,
+    Users,
+} from "@/pages";
 
 function App() {
     return (
-        <StyledApp>
-            <div>
+        <BrowserRouter>
+            <Routes>
+                <Route element={<AppLayout />}>
+                    <Route index element={<Navigate to="/dashboard" />} />
+                    <Route path="/account" element={<Account />} />
+                    <Route path="/bookings" element={<Bookings />} />
+                    <Route path="/cabins" element={<Cabins />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/settings" element={<Settings />} />
+                    <Route path="/users" element={<Users />} />
+                </Route>
+                <Route path="/login" element={<Login />} />
+                <Route path="*" element={<PageNotFound />} />
+            </Routes>
+        </BrowserRouter>
+    );
+}
+
+export default App;
+
+/*
+   <div>
                 <Heading as="h1">H1 Hello World</Heading>
                 <Heading as="h2">H2 Hello World</Heading>
                 <Heading as="h3">H3 Hello World</Heading>
@@ -73,8 +84,6 @@ function App() {
                     </Column>
                 </Center>
             </div>
-        </StyledApp>
-    );
-}
 
-export default App;
+
+*/
