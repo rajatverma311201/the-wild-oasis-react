@@ -51,21 +51,25 @@ function App() {
             </div>
             <div>
                 <Row justify="even">
-                    <Button>Check In</Button>
-                    <Button>Check In</Button>
+                    <Button size="large">Check In</Button>
+                    <Button variant="secondary">Check In</Button>
                 </Row>
             </div>
             <div>
-                <Column align="center">
-                    <Button>Check In</Button>
-                    <Button>Check In</Button>
-                </Column>
+                <Center>
+                    <Column align="center">
+                        <Button size="small">Check In</Button>
+                        <Button>Check In</Button>
+                        <Button size="large">Check In</Button>
+                    </Column>
+                </Center>
             </div>
             <div>
                 <Center>
                     <Column align="center">
                         <Button>Check In</Button>
-                        <Button>Check In</Button>
+                        <Button variant="secondary">Check In</Button>
+                        <Button variant="danger">Check In</Button>
                     </Column>
                 </Center>
             </div>
