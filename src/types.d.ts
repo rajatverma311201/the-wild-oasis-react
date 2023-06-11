@@ -1,4 +1,4 @@
-export interface Cabin {
+export type Cabin = {
     id: number;
     name: string;
     maxCapacity: number;
@@ -6,4 +6,5 @@ export interface Cabin {
     discount: number;
     image: string;
     description: string;
-}
+    [key: string]: any;
+};

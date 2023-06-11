@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Button, Heading } from "@/components";
+import { Button } from "@/components/ui";
+import { Heading } from "@/components/typography";
 
 const StyledConfirmDelete = styled.div`
     width: 40rem;

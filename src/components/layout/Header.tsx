@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Heading } from "@/components";
+import { Heading } from "@/components/typography";
 
 const StyledHeader = styled.header`
     background-color: skyblue;

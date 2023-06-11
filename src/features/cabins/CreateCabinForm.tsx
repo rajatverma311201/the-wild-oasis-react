@@ -1,6 +1,6 @@
 import { Input, Form, FileInput, Textarea, FormRow } from "@/components/form";
 
-import { Button } from "@/components";
+import { Button } from "@/components/ui";
 
 import { useForm } from "react-hook-form";
 import { Cabin } from "@/types";

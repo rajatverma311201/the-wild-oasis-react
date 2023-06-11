@@ -1,21 +1,19 @@
-import { Heading } from "@/components";
-import { Column, Row } from "@/components/layout";
-import { CabinTable, AddCabin } from "@/features/cabins";
-function Cabins() {
-    // const [showForm, setShowForm] = useState<boolean>(false);
+import { Heading } from "@/components/typography";
 
+import { Column, Row } from "@/components/layout";
+import { CabinTable, AddCabin, CabinTableOperations } from "@/features/cabins";
+function Cabins() {
     return (
         <>
             <Row>
                 <Heading as="h1">All cabins</Heading>
-                <p>Filter/Sort</p>
+                <CabinTableOperations />
             </Row>
             <Column>
-                <CabinTable />
-
                 <Column align="start">
                     <AddCabin />
                 </Column>
+                <CabinTable />
             </Column>
         </>
     );

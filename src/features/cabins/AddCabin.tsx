@@ -1,4 +1,4 @@
-import { Button, Modal } from "@/components";
+import { Button, Modal } from "@/components/ui";
 import { Column } from "@/components/layout";
 import { CreateCabinForm } from ".";
 

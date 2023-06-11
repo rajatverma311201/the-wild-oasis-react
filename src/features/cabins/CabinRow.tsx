@@ -1,17 +1,12 @@
 import styled from "styled-components";
 import { Cabin } from "@/types";
-// import CreateCabinForm from "./CreateCabinForm";
 import { formatCurrency } from "@/utils/helpers";
 import { useCreateCabin, useDeleteCabin } from "@/hooks/cabins";
 import { CreateCabinForm } from ".";
 import { Row } from "@/components/layout";
 import { HiPencil, HiSquare2Stack, HiTrash } from "react-icons/hi2";
-import { Modal } from "@/components";
+import { Modal } from "@/components/ui";
 import ConfirmDelete from "@/components/ui/ConfirmDelete";
-// import { useCreateCabin } from "./useCreateCabin";
-// import Modal from "../../ui/Modal";
-// import ConfirmDelete from "../../ui/ConfirmDelete";
-// import Table from "../../ui/Table";
 
 const TableRow = styled.div`
     display: grid;

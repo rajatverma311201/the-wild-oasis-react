@@ -1,4 +1,4 @@
-import { Heading } from "@/components";
+import { Heading } from "@/components/typography";
 import { Column } from "@/components/layout";
 import { UpdateSettingsForm } from "@/features/settings";
 
