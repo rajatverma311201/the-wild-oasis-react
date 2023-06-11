@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Logo, MainNav } from "@/components/ui";
-
+import Uploader from "@/data/Uploader";
 const StyledSidebar = styled.aside`
     background-color: var(--color-grey-0);
     grid-row: 1/-1;
@@ -9,7 +9,8 @@ const StyledSidebar = styled.aside`
     padding: 3.25rem 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 2.5rem;
+    overflow-y: auto;
 `;
 
 function Sidebar() {
@@ -17,6 +18,7 @@ function Sidebar() {
         <StyledSidebar>
             <Logo />
             <MainNav />
+            <Uploader />
         </StyledSidebar>
     );
 }

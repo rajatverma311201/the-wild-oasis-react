@@ -16,9 +16,17 @@ const h4Styles = css`
     font-size: 1.75rem;
     font-weight: 500;
 `;
+const h5Styles = css`
+    font-size: 1.5rem;
+    font-weight: 500;
+`;
+const h6Styles = css`
+    font-size: 1.25rem;
+    font-weight: 500;
+`;
 
 type HeadingProps = {
-    as?: "h1" | "h2" | "h3" | "h4";
+    as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
     align?: "left" | "center" | "right";
 };
 
@@ -33,6 +41,10 @@ const Heading = styled.h1`
                 return h3Styles;
             case "h4":
                 return h4Styles;
+            case "h5":
+                return h5Styles;
+            case "h6":
+                return h6Styles;
             default:
                 return h1Styles;
         }
