@@ -1,10 +1,8 @@
-import { useState } from "react";
-import { Button, Heading } from "@/components";
+import { Heading } from "@/components";
 import { Column, Row } from "@/components/layout";
-import { CabinTable, CreateCabinForm } from "@/features/cabins";
-
+import { CabinTable, AddCabin } from "@/features/cabins";
 function Cabins() {
-    const [showForm, setShowForm] = useState<boolean>(false);
+    // const [showForm, setShowForm] = useState<boolean>(false);
 
     return (
         <>
@@ -14,13 +12,11 @@ function Cabins() {
             </Row>
             <Column>
                 <CabinTable />
-                <Column align="stretch">
-                    <Button onClick={() => setShowForm((show) => !show)}>
-                        Add Cabin
-                    </Button>
+
+                <Column align="start">
+                    <AddCabin />
                 </Column>
             </Column>
-            {showForm && <CreateCabinForm />}
         </>
     );
 }

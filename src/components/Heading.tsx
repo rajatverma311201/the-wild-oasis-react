@@ -17,8 +17,13 @@ const h4Styles = css`
     font-weight: 500;
 `;
 
+type HeadingProps = {
+    as?: "h1" | "h2" | "h3" | "h4";
+    align?: "left" | "center" | "right";
+};
+
 const Heading = styled.h1`
-    ${(props: { as?: string }) => {
+    ${(props: HeadingProps) => {
         switch (props.as) {
             case "h1":
                 return h1Styles;
@@ -32,7 +37,16 @@ const Heading = styled.h1`
                 return h1Styles;
         }
     }}
-    line-height: 1.4;
+
+    ${(props: { align?: string; as?: string }) =>
+        props.align &&
+        css`
+            text-align: ${props.align};
+        `}
 `;
 
+Heading.defaultProps = {
+    as: "h1",
+    align: "left",
+};
 export default Heading;

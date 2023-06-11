@@ -8,18 +8,7 @@ import React, {
 import styled from "styled-components";
 import { HiXMark } from "react-icons/hi2";
 import { useOutsideClick } from "@/hooks";
-
-const Overlay = styled.div`
-    width: "100%";
-    height: "100vh";
-    position: "fixed";
-    top: 0;
-    left: 0;
-    background-color: var(--backdrop-color);
-    backdrop-filter: blur(4px);
-    z-index: 1000;
-    transition: all 0.5s;
-`;
+import { createPortal } from "react-dom";
 
 const StyledModal = styled.div`
     position: fixed;
@@ -31,9 +20,24 @@ const StyledModal = styled.div`
     box-shadow: var(--shadow-lg);
     padding: 3.2rem 4rem;
     transition: all 0.5s;
+    max-height: 90vh;
+
+    overflow: auto;
 `;
 
-const Button = styled.button`
+const Overlay = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--backdrop-color);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    transition: all 0.5s;
+`;
+
+const ButtonCloseModal = styled.button`
     background: none;
     border: none;
     padding: 0.4rem;
@@ -108,17 +112,16 @@ function Window({
 
     if (openName != windowName) return null;
 
-    return (
-        <>
-            <Overlay>
-                <StyledModal ref={ref}>
-                    <Button onClick={close}>
-                        <HiXMark />
-                    </Button>
-                    <div>{cloneElement(children, { onCloseModal: close })}</div>
-                </StyledModal>
-            </Overlay>
-        </>
+    return createPortal(
+        <Overlay>
+            <StyledModal ref={ref}>
+                <ButtonCloseModal onClick={close}>
+                    <HiXMark />
+                </ButtonCloseModal>
+                <div>{cloneElement(children, { onCloseModal: close })}</div>
+            </StyledModal>
+        </Overlay>,
+        document.body
     );
 }
 
