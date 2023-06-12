@@ -5,10 +5,10 @@
 ## Tech Stack
 
 -   React
+-   Supabase
 -   React Query
 -   React Hook Form
 -   Styled Components
--   Supabase
 -   React Router
 -   React Icons
 -   React Hot Toast
