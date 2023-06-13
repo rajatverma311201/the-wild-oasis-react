@@ -1,4 +1,4 @@
-import { ReactElement, createContext, useContext } from "react";
+import { ReactNode, createContext, useContext } from "react";
 import styled from "styled-components";
 
 const StyledTable = styled.div`
@@ -68,7 +68,7 @@ const TableContext = createContext<TableCtxProps>({ columns: "" });
 
 type TableProps = {
     columns: string;
-    children: ReactElement;
+    children: ReactNode;
 };
 
 function Table({ columns, children }: TableProps) {
@@ -80,7 +80,7 @@ function Table({ columns, children }: TableProps) {
 }
 
 type TableHeaderProps = {
-    children: ReactElement;
+    children: ReactNode;
 };
 function Header({ children }: TableHeaderProps) {
     const { columns } = useContext(TableContext);
@@ -92,7 +92,7 @@ function Header({ children }: TableHeaderProps) {
 }
 
 type TableRowProps = {
-    children: ReactElement;
+    children: ReactNode;
 };
 function Row({ children }: TableRowProps) {
     const { columns } = useContext(TableContext);
@@ -104,7 +104,7 @@ function Row({ children }: TableRowProps) {
 }
 
 type TableBodyProps = {
-    data: Array<any>;
+    data: any;
     render: (tableData: any) => any;
 };
 
