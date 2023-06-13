@@ -1,6 +1,5 @@
 import { useCabins } from "@/hooks/cabins";
-import styled from "styled-components";
-import { Spinner } from "@/components/ui";
+import { Menus, Spinner } from "@/components/ui";
 import { Cabin } from "@/types";
 import { CabinRow } from ".";
 import { useSearchParams } from "react-router-dom";
@@ -31,7 +30,7 @@ function CabinTable() {
     );
 
     return (
-        <>
+        <Menus>
             <Table columns="0.6fr 1.8fr 2.2fr 1fr 1fr 1fr">
                 <Table.Header>
                     <div></div>
@@ -51,7 +50,7 @@ function CabinTable() {
                     )}
                 />
             </Table>
-        </>
+        </Menus>
     );
 }
 

@@ -108,7 +108,7 @@ function Window({
     name: string;
 }) {
     const { openName, close } = useContext(ModalContext);
-    const ref = useOutsideClick(close);
+    const ref: any = useOutsideClick(close);
 
     if (openName != windowName) return null;
 
