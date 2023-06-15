@@ -1,12 +1,6 @@
 import { Filter, SortBy } from "@/components/utils";
 
-import styled from "styled-components";
-
-const TableOperations = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
-`;
+import { TableOperations } from "@/components/utils";
 
 function CabinTableOperations() {
     return (
