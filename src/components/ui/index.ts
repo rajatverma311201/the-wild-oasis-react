@@ -6,3 +6,5 @@ export { default as Menus } from "./Menus";
 export { default as Modal } from "./Modal";
 export { default as Spinner } from "./Spinner";
 export { default as Table } from "./Table";
+export { default as ButtonIcon } from "./ButtonIcon";
+
