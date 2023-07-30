@@ -70,13 +70,12 @@ function App() {
 export default App;
 
 /*
-   <div>
-                <Heading as="h1">H1 Hello World</Heading>
-                <Heading as="h2">H2 Hello World</Heading>
-                <Heading as="h3">H3 Hello World</Heading>
-                <Heading as="h4">H4 Hello World</Heading>
+    <div>
+            <Heading as="h1">H1 Hello World</Heading>
+            <Heading as="h2">H2 Hello World</Heading>
+            <Heading as="h3">H3 Hello World</Heading>
+            <Heading as="h4">H4 Hello World</Heading>
             </div>
-
             <div>
                 <Center>
                     <Button>Check In</Button>
@@ -110,7 +109,5 @@ export default App;
                         <Button variant="danger">Check In</Button>
                     </Column>
                 </Center>
-            </div>
-
-
+    </div>
 */

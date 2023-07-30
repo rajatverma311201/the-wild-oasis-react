@@ -6,10 +6,9 @@ function Bookings() {
     return (
         <>
             <Row style={{ marginBottom: "2.5rem" }}>
-                <Heading as="h1">All cabins</Heading>
+                <Heading as="h1">All Bookings</Heading>
                 <BookingsTableOperations />
             </Row>
-            <h1>Bookings</h1>
             <BookingsTable />
         </>
     );
