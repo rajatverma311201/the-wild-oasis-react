@@ -3,15 +3,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
-/* COMPONENT IMPORTS */
-// import { Button, Heading } from "@/components";
-// import { Row, Column, Center } from "@/components/layout";
-// import { Input } from "@/components/form";
+
 import { AppLayout } from "@/components/layout";
 
 /* PAGE IMPORTS */
 import {
     Account,
+    Booking,
     Bookings,
     Cabins,
     Dashboard,
@@ -34,6 +32,10 @@ function App() {
                         <Route index element={<Navigate to="/dashboard" />} />
                         <Route path="/account" element={<Account />} />
                         <Route path="/bookings" element={<Bookings />} />
+                        <Route
+                            path="bookings/:bookingId"
+                            element={<Booking />}
+                        />
                         <Route path="/cabins" element={<Cabins />} />
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/settings" element={<Settings />} />
