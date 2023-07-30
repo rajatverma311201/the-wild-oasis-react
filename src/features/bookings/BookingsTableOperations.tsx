@@ -1,6 +1,6 @@
 import { Filter, SortBy, TableOperations } from "@/components/utils";
 
-function BookingTableOperations() {
+function BookingsTableOperations() {
     return (
         <TableOperations>
             <Filter
@@ -37,4 +37,4 @@ function BookingTableOperations() {
     );
 }
 
-export default BookingTableOperations;
+export default BookingsTableOperations;
