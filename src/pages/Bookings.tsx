@@ -1,5 +1,18 @@
+import { Row } from "@/components/layout";
+import { Heading } from "@/components/typography";
+import { BookingsTable, BookingsTableOperations } from "@/features/bookings";
+
 function Bookings() {
-    return <h1>Bookings</h1>;
+    return (
+        <>
+            <Row style={{ marginBottom: "2.5rem" }}>
+                <Heading as="h1">All cabins</Heading>
+                <BookingsTableOperations />
+            </Row>
+            <h1>Bookings</h1>
+            <BookingsTable />
+        </>
+    );
 }
 
 export default Bookings;
