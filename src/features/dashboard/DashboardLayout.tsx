@@ -9,6 +9,7 @@ import { Spinner } from "@/components/ui";
 
 import { useRecentBookings, useRecentStays } from "@/hooks/bookings";
 import { useCabins } from "@/hooks/cabins";
+import SalesChart from "./SalesChart";
 
 const StyledDashboardLayout = styled.div`
     margin: 2.5rem auto;
@@ -35,7 +36,7 @@ function DashboardLayout() {
             />
             {/* <TodayActivity /> */}
             {/* <DurationChart confirmedStays={confirmedStays} /> */}
-            {/* <SalesChart bookings={bookings} numDays={numDays} /> */}
+            <SalesChart bookings={bookings} numDays={numDays} />
         </StyledDashboardLayout>
     );
 }
