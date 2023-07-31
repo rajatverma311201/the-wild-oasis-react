@@ -1,5 +1,13 @@
-function Users() {
-    return <h1>Users</h1>;
+import { Heading } from "@/components/typography";
+import { SignupForm } from "@/features/authentication";
+
+function NewUsers() {
+    return (
+        <>
+            <Heading as="h1">Create a new user</Heading>
+            <SignupForm />
+        </>
+    );
 }
 
-export default Users;
+export default NewUsers;
