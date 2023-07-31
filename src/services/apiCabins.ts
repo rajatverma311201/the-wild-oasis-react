@@ -20,8 +20,6 @@ export async function deleteCabin(id: number) {
 
 // https://mduiaridvnmrzoyjpofz.supabase.co/storage/v1/object/public/wild-oasis-images/cabin-001.jpg
 export async function createEditCabin(newCabin: any, id?: number) {
-    console.log("newCabin", newCabin);
-
     const hasImagePath = newCabin.image?.startsWith?.(supabaseUrl);
     const imageName = `${Math.random()}-${
         newCabin.image.name as string
@@ -41,7 +39,6 @@ export async function createEditCabin(newCabin: any, id?: number) {
         query = query.update({ ...newCabin, image: imagePath }).eq("id", id);
 
     const { data, error } = await query.select().single();
-    console.log("data", data);
     if (error) {
         console.error(error);
         throw new Error("Cabin could not be created");
@@ -53,8 +50,6 @@ export async function createEditCabin(newCabin: any, id?: number) {
     const { error: storageError } = await supabase.storage
         .from(imageBucketName)
         .upload(imageName, newCabin.image);
-
-    console.log("storageError", storageError);
 
     // 3. Delete the cabin IF there was an error uplaoding image
     if (storageError) {

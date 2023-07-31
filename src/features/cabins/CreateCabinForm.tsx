@@ -19,7 +19,6 @@ function CreateCabinForm({
 
     const { id: editId, ...editValues } = (cabinToEdit as Cabin) || {};
     const isEditSession = Boolean(editId);
-    console.log(isEditSession, cabinToEdit);
 
     const { register, handleSubmit, reset, getValues, formState } =
         useForm<Cabin>({
@@ -35,8 +34,7 @@ function CreateCabinForm({
             editCabin(
                 { cabinData: { ...data, image }, cabinId: editId },
                 {
-                    onSuccess: (data) => {
-                        console.log(data);
+                    onSuccess: () => {
                         reset();
                         onCloseModal?.();
                     },
@@ -46,8 +44,7 @@ function CreateCabinForm({
             createCabin(
                 { ...data, image: image },
                 {
-                    onSuccess: (data) => {
-                        console.log(data);
+                    onSuccess: () => {
                         reset();
                         onCloseModal?.();
                     },
@@ -56,7 +53,7 @@ function CreateCabinForm({
     }
 
     function onError(errors: any) {
-        console.log(errors as string);
+        errors;
     }
 
     return (

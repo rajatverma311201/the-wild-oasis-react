@@ -17,7 +17,6 @@ function LoginForm() {
             { email, password },
             {
                 onSettled: () => {
-                    console.log("onSettled");
                     setEmail("");
                     setPassword("");
                 },
