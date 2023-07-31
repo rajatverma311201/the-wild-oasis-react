@@ -20,6 +20,7 @@ import {
     Users,
 } from "@/pages";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ProtectedRoute } from "./features/authentication";
 
 const queryClient = new QueryClient();
 
@@ -29,7 +30,13 @@ function App() {
             <ReactQueryDevtools initialIsOpen={false} />
             <BrowserRouter>
                 <Routes>
-                    <Route element={<AppLayout />}>
+                    <Route
+                        element={
+                            <ProtectedRoute>
+                                <AppLayout />
+                            </ProtectedRoute>
+                        }
+                    >
                         <Route index element={<Navigate to="/dashboard" />} />
                         <Route path="/account" element={<Account />} />
                         <Route path="/bookings" element={<Bookings />} />

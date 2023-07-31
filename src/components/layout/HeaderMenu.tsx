@@ -3,10 +3,11 @@ import { HiOutlineUser } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
 import { ButtonIcon } from "@/components/ui";
 import { DarkModeToggle } from "@/components/utils";
+import { Logout } from "@/features/authentication";
 
 const StyledHeaderMenu = styled.ul`
-  display: flex;
-  gap: 0.4rem;
+    display: flex;
+    gap: 0.4rem;
 `;
 
 function HeaderMenu() {
@@ -21,6 +22,9 @@ function HeaderMenu() {
             </li>
             <li>
                 <DarkModeToggle />
+            </li>
+            <li>
+                <Logout />
             </li>
         </StyledHeaderMenu>
     );

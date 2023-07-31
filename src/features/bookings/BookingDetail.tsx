@@ -19,7 +19,6 @@ import {
 } from "@/components/ui";
 
 import { useNavigate } from "react-router-dom";
-import { HiArrowUpOnSquare } from "react-icons/hi2";
 import { useCheckout } from "@/hooks/check-in-out";
 
 const HeadingGroup = styled.div`

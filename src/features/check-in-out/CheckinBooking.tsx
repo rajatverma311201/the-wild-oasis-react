@@ -3,29 +3,24 @@ import styled from "styled-components";
 import BookingDataBox from "../bookings/BookingDataBox";
 
 import { useMoveBack } from "@/hooks";
-import { useBooking, useDeleteBooking } from "@/hooks/bookings";
+import { useBooking } from "@/hooks/bookings";
 
 import { Heading } from "@/components/typography";
 import { Row } from "@/components/layout";
 import {
     Spinner,
-    ConfirmDelete,
     Empty,
-    Modal,
     Button,
     Tag,
     ButtonGroup,
     ButtonText,
 } from "@/components/ui";
 
-import { useNavigate } from "react-router-dom";
 import { formatCurrency } from "@/utils/helpers";
 import { Checkbox } from "@/components/form";
 import { useEffect, useState } from "react";
 import { useCheckin } from "@/hooks/check-in-out";
 import { useSettings } from "@/hooks/settings";
-// import { HiArrowUpOnSquare } from "react-icons/hi2";
-// import { useCheckout } from "../check-in-out/useCheckout";
 
 const Box = styled.div`
     /* Box */
@@ -49,15 +44,11 @@ function CheckinBooking() {
     const { checkin, isCheckingIn } = useCheckin();
     const { settings, isLoading: isLoadingSettings } = useSettings();
 
-    // const { checkout, isCheckingOut } = useCheckout();
-    // const { deleteBooking, isDeleting } = useDeleteBooking();
-
     useEffect(() => {
         setConfirmPaid(booking?.isPaid ?? false);
     }, [booking]);
 
     const moveBack = useMoveBack();
-    const navigate = useNavigate();
 
     if (isLoading || isLoadingSettings) return <Spinner />;
     if (!booking) return <Empty resourceName="booking" />;
