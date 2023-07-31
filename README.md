@@ -13,3 +13,12 @@
 -   React Icons
 -   React Hot Toast
 -   Recharts
+
+---
+
+## Test Account Credentials
+
+-   Email Address : `admin@example.com`
+-   Password : `admin@example`
+
+---

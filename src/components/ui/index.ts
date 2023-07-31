@@ -10,6 +10,7 @@ export { default as MainNav } from "./MainNav";
 export { default as Menus } from "./Menus";
 export { default as Modal } from "./Modal";
 export { default as Spinner } from "./Spinner";
+export { default as SpinnerMini } from "./SpinnerMini";
 export { default as Table } from "./Table";
 export { default as Tag } from "./Tag";
 export { default as ButtonIcon } from "./ButtonIcon";

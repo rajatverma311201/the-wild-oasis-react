@@ -19,8 +19,8 @@ import {
 } from "@/components/ui";
 
 import { useNavigate } from "react-router-dom";
-// import { HiArrowUpOnSquare } from "react-icons/hi2";
-// import { useCheckout } from "../check-in-out/useCheckout";
+import { HiArrowUpOnSquare } from "react-icons/hi2";
+import { useCheckout } from "@/hooks/check-in-out";
 
 const HeadingGroup = styled.div`
     display: flex;
@@ -30,7 +30,7 @@ const HeadingGroup = styled.div`
 
 function BookingDetail() {
     const { booking, isLoading } = useBooking();
-    // const { checkout, isCheckingOut } = useCheckout();
+    const { checkout, isCheckingOut } = useCheckout();
     const { deleteBooking, isDeleting } = useDeleteBooking();
 
     const moveBack = useMoveBack();
@@ -68,15 +68,16 @@ function BookingDetail() {
                     </Button>
                 )}
 
-                {/* {status === "checked-in" && (
+                {status === "checked-in" && (
                     <Button
-                        icon={<HiArrowUpOnSquare />}
+                        // icon={<HiArrowUpOnSquare />}
                         onClick={() => checkout(bookingId)}
                         disabled={isCheckingOut}
                     >
+                        {/* <HiArrowUpOnSquare /> */}
                         Check out
                     </Button>
-                )} */}
+                )}
 
                 <Modal>
                     <Modal.Open opens="delete">

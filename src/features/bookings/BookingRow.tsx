@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { format, isToday } from "date-fns";
 import {
     HiArrowDownOnSquare,
-    // HiArrowUpOnSquare,
+    HiArrowUpOnSquare,
     HiEye,
     HiTrash,
 } from "react-icons/hi2";
@@ -15,6 +15,7 @@ import { formatCurrency } from "../../utils/helpers";
 import { formatDistanceFromNow } from "../../utils/helpers";
 
 import { useDeleteBooking } from "@/hooks/bookings";
+import { useCheckout } from "@/hooks/check-in-out";
 
 const Cabin = styled.div`
     font-size: 1.6rem;
@@ -75,6 +76,7 @@ export default function BookingRow({
     const navigate = useNavigate();
 
     const { deleteBooking, isDeleting } = useDeleteBooking();
+    const { checkout, isCheckingOut } = useCheckout();
 
     const statusToTagName: any = {
         unconfirmed: "blue",
@@ -130,15 +132,15 @@ export default function BookingRow({
                             </Menus.Button>
                         )}
 
-                        {/* {status === "checked-in" && (
+                        {status === "checked-in" && (
                             <Menus.Button
                                 icon={<HiArrowUpOnSquare />}
-                                onClick={() => checkout(bookingId)}
+                                onClick={() => checkout(bookingId as any)}
                                 disabled={isCheckingOut}
                             >
                                 Check out
                             </Menus.Button>
-                        )} */}
+                        )}
 
                         <Modal.Open opens="delete">
                             <Menus.Button icon={<HiTrash />}>
