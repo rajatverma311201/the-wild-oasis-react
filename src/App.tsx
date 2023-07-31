@@ -12,6 +12,7 @@ import {
     Booking,
     Bookings,
     Cabins,
+    Checkin,
     Dashboard,
     Login,
     PageNotFound,
@@ -35,6 +36,10 @@ function App() {
                         <Route
                             path="bookings/:bookingId"
                             element={<Booking />}
+                        />
+                        <Route
+                            path="checkin/:bookingId"
+                            element={<Checkin />}
                         />
                         <Route path="/cabins" element={<Cabins />} />
                         <Route path="/dashboard" element={<Dashboard />} />
