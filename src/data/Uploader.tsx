@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { isFuture, isPast, isToday } from "date-fns";
 import supabase from "@/services/supabase";
-import { Button } from "@/components/ui";
-import { subtractDates } from "../utils/helpers";
 
 import { bookings } from "./data-bookings";
 import { cabins } from "./data-cabins";
 import { guests } from "./data-guests";
+import { Button } from "@/components/ui";
+import { Heading } from "@/components/typography";
+import { subtractDates } from "@/utils/helpers";
 
 // const originalSettings = {
 //   minBookingLength: 3,
@@ -40,8 +41,13 @@ async function createCabins() {
     if (error) console.log(error.message);
 }
 
+/**
+ *
+ *  Bookings need a guestId and a cabinId. We can't tell Supabase IDs for each object, it will calculate them on its own.
+ * So it might be different for different people, especially after multiple uploads.
+ * Therefore, we need to first get all guestIds and cabinIds, and then replace the original IDs in the booking data with the actual ones from the DB
+ */
 async function createBookings() {
-    // Bookings need a guestId and a cabinId. We can't tell Supabase IDs for each object, it will calculate them on its own. So it might be different for different people, especially after multiple uploads. Therefore, we need to first get all guestIds and cabinIds, and then replace the original IDs in the booking data with the actual ones from the DB
     const { data: guestsIds } = await supabase
         .from("guests")
         .select("id")
@@ -129,7 +135,9 @@ function Uploader() {
         <div
             style={{
                 marginTop: "auto",
-                backgroundColor: "#e0e7ff",
+                backgroundColor: "var(--color-grey-200)",
+                // border: "1px solid var(--color-grey-300)",
+
                 padding: "8px",
                 borderRadius: "5px",
                 textAlign: "center",
@@ -138,7 +146,9 @@ function Uploader() {
                 gap: "8px",
             }}
         >
-            <h3>SAMPLE DATA</h3>
+            <Heading as="h2" align="center">
+                SAMPLE DATA
+            </Heading>
 
             <Button onClick={uploadAll} disabled={isLoading}>
                 Upload ALL

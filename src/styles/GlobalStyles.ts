@@ -92,6 +92,28 @@ const GlobalStyles = createGlobalStyle`
     --color-brand-800: #3730a3;
     --color-brand-900: #312e81;
     
+    /* Sky */
+    --color-brand-50: #f0f9ff;
+    --color-brand-100: #e0f2fe;
+    --color-brand-200: #bae6fd;
+    --color-brand-500: #38bdf8;
+    --color-brand-600: #0ea5e9;
+    --color-brand-700: #0284c7;
+    --color-brand-800: #0369a1;
+    --color-brand-900: #075985;
+    
+    /* Blue */
+    --color-brand-50: #eef2ff;
+    --color-brand-100: #dbeafe;
+    --color-brand-200: #bfdbfe;
+    --color-brand-500: #60a5fa;
+    --color-brand-600: #3b82f6;
+    --color-brand-700: #2563eb;
+    --color-brand-800: #1d4ed8;
+    --color-brand-900: #1e40af;
+    
+
+
     --border-radius-tiny: 3px;
     --border-radius-sm: 5px;
     --border-radius-md: 7px;
