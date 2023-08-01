@@ -4,16 +4,15 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 
-import { AppLayout } from "@/components/layout";
-
 /* PAGE IMPORTS */
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ProtectedRoute } from "./features/authentication";
 import { Suspense, lazy } from "react";
 import styled from "styled-components";
-import { Spinner } from "./components/ui";
+import { Logo, Spinner } from "./components/ui";
 
+const AppLayout = lazy(() => import("@/components/layout/AppLayout"));
 const Account = lazy(() => import("@/pages/Account"));
 const Booking = lazy(() => import("@/pages/Booking"));
 const Bookings = lazy(() => import("@/pages/Bookings"));
@@ -30,8 +29,12 @@ const queryClient = new QueryClient();
 const StyledSpinner = styled.div`
     width: 100%;
     height: 100vh;
-    display: grid;
-    place-items: center;
+    background-color: var(--color-grey-50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
 `;
 
 function App() {
@@ -42,6 +45,7 @@ function App() {
                 <Suspense
                     fallback={
                         <StyledSpinner>
+                            <Logo />
                             <Spinner />
                         </StyledSpinner>
                     }
