@@ -45,45 +45,72 @@ function App() {
         <QueryClientProvider client={queryClient}>
             <ReactQueryDevtools initialIsOpen={false} />
             <BrowserRouter>
-                <Suspense
-                    fallback={
-                        <StyledSpinner>
-                            <Logo /> <Spinner />
-                        </StyledSpinner>
-                    }
-                >
-                    <Routes>
-                        <Route
-                            element={
+                <Routes>
+                    <Route
+                        element={
+                            <Suspense
+                                fallback={
+                                    <StyledSpinner>
+                                        <Logo /> <Spinner />
+                                    </StyledSpinner>
+                                }
+                            >
                                 <ProtectedRoute>
                                     <AppLayout />
                                 </ProtectedRoute>
+                            </Suspense>
+                        }
+                    >
+                        <Suspense
+                            fallback={
+                                <StyledSpinner>
+                                    <Logo /> <Spinner />
+                                </StyledSpinner>
                             }
                         >
-                            <Route
-                                index
-                                element={<Navigate to="/dashboard" />}
-                            />
+                            <>
+                                <Route
+                                    index
+                                    element={<Navigate to="/dashboard" />}
+                                />
 
-                            <Route path="/account" element={<Account />} />
-                            <Route path="/bookings" element={<Bookings />} />
-                            <Route
-                                path="bookings/:bookingId"
-                                element={<Booking />}
-                            />
-                            <Route
-                                path="checkin/:bookingId"
-                                element={<Checkin />}
-                            />
-                            <Route path="/cabins" element={<Cabins />} />
-                            <Route path="/dashboard" element={<Dashboard />} />
-                            <Route path="/settings" element={<Settings />} />
-                            <Route path="/users" element={<Users />} />
-                        </Route>
+                                <Route path="/account" element={<Account />} />
+                                <Route
+                                    path="/bookings"
+                                    element={<Bookings />}
+                                />
+                                <Route
+                                    path="bookings/:bookingId"
+                                    element={<Booking />}
+                                />
+                                <Route
+                                    path="checkin/:bookingId"
+                                    element={<Checkin />}
+                                />
+                                <Route path="/cabins" element={<Cabins />} />
+                                <Route
+                                    path="/dashboard"
+                                    element={<Dashboard />}
+                                />
+                                <Route
+                                    path="/settings"
+                                    element={<Settings />}
+                                />
+                                <Route path="/users" element={<Users />} />
+                            </>
+                        </Suspense>
+                    </Route>
+                    <Suspense
+                        fallback={
+                            <StyledSpinner>
+                                <Logo /> <Spinner />
+                            </StyledSpinner>
+                        }
+                    >
                         <Route path="/login" element={<Login />} />
                         <Route path="*" element={<PageNotFound />} />
-                    </Routes>
-                </Suspense>
+                    </Suspense>
+                </Routes>
             </BrowserRouter>
             <Toaster
                 position="top-center"
