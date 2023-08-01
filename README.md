@@ -1,6 +1,6 @@
 # The Wild Oasis
 
-## [Click to see live demo](https://the-wild-oasis-react.netlify.app/)
+## [Click to see live demo](https://the-wild-oasis-react.vercel.app/)
 
 ## Tech Stack
 
