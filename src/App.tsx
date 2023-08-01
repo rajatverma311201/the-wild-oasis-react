@@ -9,11 +9,9 @@ import { Toaster } from "react-hot-toast";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Suspense, lazy } from "react";
 import styled from "styled-components";
-import { Logo, Spinner } from "./components/ui";
+import { Logo, Spinner } from "@/components/ui";
+import { ProtectedRoute } from "@/features/authentication";
 
-const ProtectedRoute = lazy(
-    () => import("@/features/authentication/ProtectedRoute")
-);
 const Account = lazy(() => import("@/pages/Account"));
 const Booking = lazy(() => import("@/pages/Booking"));
 const Bookings = lazy(() => import("@/pages/Bookings"));
@@ -44,28 +42,20 @@ function App() {
     return (
         <QueryClientProvider client={queryClient}>
             <ReactQueryDevtools initialIsOpen={false} />
-            <BrowserRouter>
-                <Routes>
-                    <Route
-                        element={
-                            <Suspense
-                                fallback={
-                                    <StyledSpinner>
-                                        <Logo /> <Spinner />
-                                    </StyledSpinner>
-                                }
-                            >
+            <Suspense
+                fallback={
+                    <StyledSpinner>
+                        <Logo /> <Spinner />
+                    </StyledSpinner>
+                }
+            >
+                <BrowserRouter>
+                    <Routes>
+                        <Route
+                            element={
                                 <ProtectedRoute>
                                     <AppLayout />
                                 </ProtectedRoute>
-                            </Suspense>
-                        }
-                    >
-                        <Suspense
-                            fallback={
-                                <StyledSpinner>
-                                    <Logo /> <Spinner />
-                                </StyledSpinner>
                             }
                         >
                             <>
@@ -98,20 +88,13 @@ function App() {
                                 />
                                 <Route path="/users" element={<Users />} />
                             </>
-                        </Suspense>
-                    </Route>
-                    <Suspense
-                        fallback={
-                            <StyledSpinner>
-                                <Logo /> <Spinner />
-                            </StyledSpinner>
-                        }
-                    >
+                        </Route>
+
                         <Route path="/login" element={<Login />} />
                         <Route path="*" element={<PageNotFound />} />
-                    </Suspense>
-                </Routes>
-            </BrowserRouter>
+                    </Routes>
+                </BrowserRouter>
+            </Suspense>
             <Toaster
                 position="top-center"
                 gutter={12}
