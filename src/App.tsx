@@ -1,8 +1,8 @@
 /* MODULE IMPORTS */
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { AppLayout } from "@/components/layout";
 
@@ -19,6 +19,7 @@ import {
     Settings,
     Users,
 } from "@/pages";
+
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ProtectedRoute } from "./features/authentication";
 
