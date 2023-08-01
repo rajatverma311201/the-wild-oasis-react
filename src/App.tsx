@@ -7,22 +7,25 @@ import { Toaster } from "react-hot-toast";
 /* PAGE IMPORTS */
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { ProtectedRoute } from "./features/authentication";
 import { Suspense, lazy } from "react";
 import styled from "styled-components";
 import { Logo, Spinner } from "./components/ui";
 
-const AppLayout = lazy(() => import("@/components/layout/AppLayout"));
+const ProtectedRoute = lazy(
+    () => import("@/features/authentication/ProtectedRoute")
+);
 const Account = lazy(() => import("@/pages/Account"));
 const Booking = lazy(() => import("@/pages/Booking"));
 const Bookings = lazy(() => import("@/pages/Bookings"));
 const Cabins = lazy(() => import("@/pages/Cabins"));
 const Checkin = lazy(() => import("@/pages/Checkin"));
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
-const Login = lazy(() => import("@/pages/Login"));
-const PageNotFound = lazy(() => import("@/pages/PageNotFound"));
+
 const Settings = lazy(() => import("@/pages/Settings"));
 const Users = lazy(() => import("@/pages/Users"));
+const Login = lazy(() => import("@/pages/Login"));
+const PageNotFound = lazy(() => import("@/pages/PageNotFound"));
+const AppLayout = lazy(() => import("@/components/layout/AppLayout"));
 
 const queryClient = new QueryClient();
 
