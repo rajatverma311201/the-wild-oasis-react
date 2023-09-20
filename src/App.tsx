@@ -1,3 +1,4 @@
+import { ReactNode, Suspense, lazy } from "react";
 /* MODULE IMPORTS */
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -6,22 +7,20 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { AppLayout } from "@/components/layout";
 
-/* PAGE IMPORTS */
-import {
-    Account,
-    Booking,
-    Bookings,
-    Cabins,
-    Checkin,
-    Dashboard,
-    Login,
-    PageNotFound,
-    Settings,
-    Users,
-} from "@/pages";
+const Account = lazy(() => import("@/pages/Account"));
+const Booking = lazy(() => import("@/pages/Booking"));
+const Bookings = lazy(() => import("@/pages/Bookings"));
+const Cabins = lazy(() => import("@/pages/Cabins"));
+const Checkin = lazy(() => import("@/pages/Checkin"));
+const Dashboard = lazy(() => import("@/pages/Dashboard"));
+const Login = lazy(() => import("@/pages/Login"));
+const PageNotFound = lazy(() => import("@/pages/PageNotFound"));
+const Settings = lazy(() => import("@/pages/Settings"));
+const Users = lazy(() => import("@/pages/Users"));
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ProtectedRoute } from "./features/authentication";
+import { Spinner } from "./components/ui";
 
 const queryClient = new QueryClient();
 
@@ -39,23 +38,87 @@ function App() {
                         }
                     >
                         <Route index element={<Navigate to="/dashboard" />} />
-                        <Route path="/account" element={<Account />} />
-                        <Route path="/bookings" element={<Bookings />} />
+                        <Route
+                            path="/account"
+                            element={
+                                <Susp>
+                                    <Account />
+                                </Susp>
+                            }
+                        />
+                        <Route
+                            path="/bookings"
+                            element={
+                                <Susp>
+                                    <Bookings />
+                                </Susp>
+                            }
+                        />
                         <Route
                             path="bookings/:bookingId"
-                            element={<Booking />}
+                            element={
+                                <Susp>
+                                    <Booking />
+                                </Susp>
+                            }
                         />
                         <Route
                             path="checkin/:bookingId"
-                            element={<Checkin />}
+                            element={
+                                <Susp>
+                                    <Checkin />
+                                </Susp>
+                            }
                         />
-                        <Route path="/cabins" element={<Cabins />} />
-                        <Route path="/dashboard" element={<Dashboard />} />
-                        <Route path="/settings" element={<Settings />} />
-                        <Route path="/users" element={<Users />} />
+                        <Route
+                            path="/cabins"
+                            element={
+                                <Susp>
+                                    <Cabins />
+                                </Susp>
+                            }
+                        />
+                        <Route
+                            path="/dashboard"
+                            element={
+                                <Susp>
+                                    <Dashboard />
+                                </Susp>
+                            }
+                        />
+                        <Route
+                            path="/settings"
+                            element={
+                                <Susp>
+                                    <Settings />
+                                </Susp>
+                            }
+                        />
+                        <Route
+                            path="/users"
+                            element={
+                                <Susp>
+                                    <Users />
+                                </Susp>
+                            }
+                        />
                     </Route>
-                    <Route path="/login" element={<Login />} />
-                    <Route path="*" element={<PageNotFound />} />
+                    <Route
+                        path="/login"
+                        element={
+                            <Susp>
+                                <Login />
+                            </Susp>
+                        }
+                    />
+                    <Route
+                        path="*"
+                        element={
+                            <Susp>
+                                <PageNotFound />
+                            </Susp>
+                        }
+                    />
                 </Routes>
             </BrowserRouter>
             <Toaster
@@ -83,6 +146,10 @@ function App() {
 }
 
 export default App;
+
+const Susp = ({ children }: { children: ReactNode }) => {
+    return <Suspense fallback={<Spinner />}>{children}</Suspense>;
+};
 
 /*
     <div>
