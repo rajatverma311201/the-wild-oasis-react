@@ -27,6 +27,8 @@
 
 -   **`Users`** can view all the **`cabins`**, **`booking`** and their **`account`** details, change their avatar, name and password and they can create other users also.
 
+-   **`Cabins`** and **`Bookings`** can be **`filtered`** by **`status`** and **`sorted`** by name, date etc. including **`pagination`**.
+
 -   **`Users`** can add, edit, delete and **`cabins`**, add cabin images. They can check-in and check-out **`guests`** and confirm their payment and they can also change **`settings`** of the hotel such as breakfast price, max guests etc.
 
 -   **`Dashboard`** shows **`statistics`** of the hotel like total bookings, total cabins, total guests, total sales, charts for sales and bookings. Users can toggle details between durations - **`7, 30 and 90 days`**.
