@@ -1,4 +1,4 @@
-import { Column, Row } from "@/components/layout";
+import { Column } from "@/components/layout";
 import { Heading } from "@/components/typography";
 import UpdatePasswordForm from "@/features/authentication/UpdatePasswordForm";
 import UpdateUserDataForm from "@/features/authentication/UpdateUserDataForm";
