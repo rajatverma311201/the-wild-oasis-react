@@ -8,5 +8,8 @@ export const supabaseKey =
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const imageBucketName = "wild-oasis-images";
-
+export const avatarBucketName = "avatars";
 export default supabase;
+// Deepaklko31post
+
+// Postgresmtp123

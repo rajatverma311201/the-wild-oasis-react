@@ -1,5 +1,24 @@
+import { Column, Row } from "@/components/layout";
+import { Heading } from "@/components/typography";
+import UpdatePasswordForm from "@/features/authentication/UpdatePasswordForm";
+import UpdateUserDataForm from "@/features/authentication/UpdateUserDataForm";
+
 function Account() {
-    return <h1>Account</h1>;
+    return (
+        <Column>
+            <Heading as="h1">Update your account</Heading>
+
+            <Column>
+                <Heading as="h3">Update user data</Heading>
+                <UpdateUserDataForm />
+            </Column>
+
+            <Column>
+                <Heading as="h3">Update password</Heading>
+                <UpdatePasswordForm />
+            </Column>
+        </Column>
+    );
 }
 
 export default Account;

@@ -12,12 +12,13 @@ function SignupForm() {
     const { register, formState, getValues, handleSubmit, reset } = useForm();
     const { errors } = formState;
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function onSubmit({ fullName, email, password }: any) {
         signup(
             { fullName, email, password },
             {
                 onSettled: () => reset(),
-            }
+            },
         );
     }
 
