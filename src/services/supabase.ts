@@ -1,15 +1,10 @@
 import { createClient } from "@supabase/supabase-js";
 
-export const supabaseUrl = "https://mduiaridvnmrzoyjpofz.supabase.co";
-// const supabaseKey = process.env.SUPABASE_KEY || "";
+export const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || "";
 
-export const supabaseKey =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1kdWlhcmlkdm5tcnpveWpwb2Z6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODYzODIzNjAsImV4cCI6MjAwMTk1ODM2MH0.S94VYi0wdJheohVCJTqkeO-mNfjI62pHLcKsdKb5Vd4";
+export const supabaseKey = import.meta.env.VITE_SUPABASE_KEY || "";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const imageBucketName = "wild-oasis-images";
 export const avatarBucketName = "avatars";
 export default supabase;
-// Deepaklko31post
-
-// Postgresmtp123
