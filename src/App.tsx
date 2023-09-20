@@ -20,9 +20,28 @@ const Users = lazy(() => import("@/pages/Users"));
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ProtectedRoute } from "./features/authentication";
-import { Spinner } from "./components/ui";
+import { Logo, Spinner } from "./components/ui";
+import styled from "styled-components";
 
 const queryClient = new QueryClient();
+
+const StyledLoader = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    justify-content: center;
+    margin-top: 20vh;
+`;
+
+const Loader = () => {
+    return (
+        <StyledLoader>
+            <Logo />
+            <Spinner />
+        </StyledLoader>
+    );
+};
 
 function App() {
     return (
@@ -148,7 +167,7 @@ function App() {
 export default App;
 
 const Susp = ({ children }: { children: ReactNode }) => {
-    return <Suspense fallback={<Spinner />}>{children}</Suspense>;
+    return <Suspense fallback={<Loader />}>{children}</Suspense>;
 };
 
 /*

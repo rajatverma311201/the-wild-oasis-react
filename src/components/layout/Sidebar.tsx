@@ -9,7 +9,7 @@ const StyledSidebar = styled.aside`
     padding: 3.25rem 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 5rem;
     overflow-y: auto;
 `;
 
