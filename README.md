@@ -25,31 +25,31 @@
 
 ## Screenshots
 
--   ### Dashboard Dark Mode
+-   ### `Dashboard Dark Mode`
 
-    ![Dashboard Page Dark Mode](/public/project-images/dashboard-dark.png)
+    <img src="./public/project-images/dashboard-dark.png" style="max-height : 500px;" />
 
--   ### Dashboard Light Mode
+-   ### `Dashboard Light Mode`
 
-    ![Dashboard Page Light Mode](/public/project-images/dashboard-light.png)
+    <img src="./public/project-images/dashboard-light.png" style="max-height : 500px;" />
 
--   ### Bookings Page
+-   ### `Bookings Page`
 
-    ![Bookings Page](/public/project-images/bookings.png)
+    <img src="./public/project-images/bookings.png" style="max-height : 500px;" />
 
--   ### Cabins Page
+-   ### `Cabins Page`
 
-    ![Cabins Page](/public/project-images/cabins.png)
+    <img src="./public/project-images/cabins.png" style="max-height : 500px;" />
 
--   ### User Account Page
+-   ### `User Account Page`
 
-    ![Account Page](/public/project-images/account.png)
+    <img src="./public/project-images/account.png" style="max-height : 500px;" />
 
 ## Features
 
--   The Wild Oasis is an admin dashboard for a Hotel Cabins booking website.
--   Users of the **Web App** are the hotel employees.
--   It has a login page with email and password authentication using `Supabase`.
+-   **`The Wild Oasis`** is an admin dashboard for a Hotel Cabins.
+-   Users of the **`Web App`** are the hotel employees.
+-   It has a login page with email and password authentication using **`Supabase`**.
 -   It has a dashboard page with a sidebar and a navbar.
 -   The sidebar has links to the dashboard, bookings, rooms, customers, and staff pages.
 -   The dashboard page has a summary of the total number of bookings, rooms, customers, and staff.
