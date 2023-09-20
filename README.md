@@ -1,6 +1,6 @@
 # The Wild Oasis
 
-## [`Live Link ->`](https://the-wild-oasis-react.vercel.app/)
+## [`👉🏻 Live Link 👈🏻`](https://the-wild-oasis-react.vercel.app/)
 
 ## Test Account Credentials
 
