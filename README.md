@@ -21,38 +21,38 @@
 
 ## Features
 
--   **`The Wild Oasis`** is a **`Single Page Application`** Admin Dashboard built with **`React`**. **`Supabase`** is used as the backend and **`React Query`** is used for remote state management. **`Styled Components`** is used for styling and **`Recharts`** is used for displaying charts, **`React Hot Toast`** for displaying toast messages and **`React Router`** for navigation and routing.
+-   **`The Wild Oasis`** is a **`Single Page Application`** Admin Dashboard built with **`React`**. **`Supabase`** is used as the backend and **`React Query`** is used for remote state management. **`Styled Components`** is used for styling and **`Recharts`** is used for displaying charts, **`React Hot Toast`** for displaying toast messages, **`React Router`** for navigation and routing, **`React Hook Form`** for complex form handling and validation.
 
--   The Admin dashboard for a Hotel Cabins with **`dark/light`** mode. Users of the **`Web-App`** are the hotel employees.
+-   The **`Admin dashboard`** for Hotel Cabins also has **`dark and light`** mode. Users of the **`Web-App`** are the hotel employees.
 
--   Users can view all the cabins, booking and their account details, change their photo, name and password and they can create other users also.
+-   **`Users`** can view all the **`cabins`**, **`booking`** and their **`account`** details, change their avatar, name and password and they can create other users also.
 
--   Users can add, edit, delete and cabins, add cabin images. They can check-in and check-out guests and confirm their payment and they can also change settings of the hotel such as breakfast price, max guests etc.
+-   **`Users`** can add, edit, delete and **`cabins`**, add cabin images. They can check-in and check-out **`guests`** and confirm their payment and they can also change **`settings`** of the hotel such as breakfast price, max guests etc.
 
--   Dashboard shows statistics of the hotel like total bookings, total cabins, total guests, total sales, charts for sales and bookings. Users can toggle details between duration (7, 30, 90 days).
+-   **`Dashboard`** shows **`statistics`** of the hotel like total bookings, total cabins, total guests, total sales, charts for sales and bookings. Users can toggle details between durations - **`7, 30 and 90 days`**.
 
 ## Screenshots
 
--   ##### Dashboard - Dark Mode
+-   #### Dashboard - Dark Mode
 
     <img src="./public/project-images/dashboard-dark.png" height="250px"  />
 
--   ##### Dashboard - Light Mode
+-   #### Dashboard - Light Mode
 
     <img src="./public/project-images/dashboard-light.png" height="250px" />
 
--   ##### Bookings Page
+-   #### Bookings Page
 
     <img src="./public/project-images/bookings.png" height="250px" />
 
--   ##### Cabins Page
+-   #### Cabins Page
 
     <img src="./public/project-images/cabins.png" height="250px" />
 
--   ##### User Account Page
+-   #### User Account Page
 
     <img src="./public/project-images/account.png" height="250px" />
 
--   ##### Settings Page
+-   #### Settings Page
 
     <img src="./public/project-images/settings.png" height="250px" />
