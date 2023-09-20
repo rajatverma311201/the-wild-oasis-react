@@ -27,23 +27,23 @@
 
 -   #### `Dashboard Dark Mode`
 
-    <img src="./public/project-images/dashboard-dark.png" style="max-height : 250px;" />
+    <img src="./public/project-images/dashboard-dark.png" style="max-height : 250px; width:auto;" />
 
 -   #### `Dashboard Light Mode`
 
-    <img src="./public/project-images/dashboard-light.png" style="max-height : 250px;" />
+    <img src="./public/project-images/dashboard-light.png" style="max-height : 250px; width:auto;" />
 
 -   #### `Bookings Page`
 
-    <img src="./public/project-images/bookings.png" style="max-height : 250px;" />
+    <img src="./public/project-images/bookings.png" style="max-height : 250px; width:auto;" />
 
 -   #### `Cabins Page`
 
-    <img src="./public/project-images/cabins.png" style="max-height : 250px;" />
+    <img src="./public/project-images/cabins.png" style="max-height : 250px; width:auto;" />
 
 -   #### `User Account Page`
 
-    <img src="./public/project-images/account.png" style="max-height : 250px;" />
+    <img src="./public/project-images/account.png" style="max-height : 250px; width:auto;" />
 
 ## Features
 
