@@ -12,7 +12,7 @@
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 &nbsp;&nbsp;![Supabase](https://img.shields.io/badge/Supabase-000000?style=for-the-badge&logo=Supabase&logoColor=white)
 &nbsp;&nbsp;![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white)
-&nbsp;&nbsp;![React Hook Form](https://img.shields.io/badge/React_Hook_Form-000000?style=for-the-badge&logo=React_Hook_Form&logoColor=white)
+&nbsp;&nbsp;![React Hook Form](https://img.shields.io/badge/React_Hook_Form-000000?style=for-the-badge&logo=reacthookform&logoColor=white)
 &nbsp;&nbsp;![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 &nbsp;&nbsp;![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 &nbsp;&nbsp;![React Icons](https://img.shields.io/badge/React_Icons-5588FF?style=for-the-badge&logo=React_Icons&logoColor=black)
