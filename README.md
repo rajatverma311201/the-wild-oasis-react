@@ -1,11 +1,11 @@
 # The Wild Oasis
 
-## [`👉🏻 Live Link 👈🏻`](https://the-wild-oasis-react.vercel.app/)
+## [`👉🏻 Live Link 👈🏻`](https://wild-oasis.rajat-verma.in)
 
 ## Test Account Credentials
 
--   Email Address : `admin@example.com`
--   Password : `admin@example`
+-   Email Address : `admin2@example.com`
+-   Password : `admin2@example`
 
 ## Tech Stack
 
