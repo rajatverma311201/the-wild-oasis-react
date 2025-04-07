@@ -4,8 +4,8 @@
 
 ## Test Account Credentials
 
--   Email Address : `admin2@example.com`
--   Password : `admin2@example`
+-   Email Address : `wild@test.com`
+-   Password : `wild@test`
 
 ## Tech Stack
 
